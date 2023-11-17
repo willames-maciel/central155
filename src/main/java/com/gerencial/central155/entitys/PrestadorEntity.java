@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -15,10 +16,14 @@ import java.util.UUID;
 public class PrestadorEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_prestador")
+    private Long id;
 
     @Column(length = 20,  nullable = false)
     private String prestador;
+
+    @OneToMany(mappedBy = "prestador", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    private Set<ChamadosEntity> chamados;
 
 }
