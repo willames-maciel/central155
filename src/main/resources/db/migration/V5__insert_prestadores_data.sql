@@ -1,0 +1,7 @@
+---- INSERT DATA
+--INSERT INTO public.tb_prestadores (prestador)
+--VALUES
+--    ('Digitro'),
+--    ('Operadora OI'),
+--    ('ETICE'),
+--    ('Lan Link');
